@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#09090d">
+<meta name="description" content="Starfall — sebuah dunia yang lahir dari jatuhnya sebuah bintang. Jelajahi lore, ras, kerajaan, senjata kuno dan panduan pemain.">
+<title>STARFALL — A World Beyond the Stars</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+:root{--bg:#09090d;--panel:#111117;--panel2:#17151d;--gold:#c5a56a;--gold2:#ead4a1;--muted:#aaa4ad;--line:rgba(197,165,106,.2);--purple:#76608e}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:76px}body{margin:0;background:var(--bg);color:#eee9e2;font-family:Inter,Arial,sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}.wrap{width:min(1100px,90%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:rgba(9,9,13,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{height:66px;display:flex;align-items:center;justify-content:space-between}.brand{font-family:Cinzel,serif;letter-spacing:4px;font-weight:700;color:var(--gold2);font-size:18px}.navlinks{display:flex;gap:19px;font-size:12px;color:#c9c2c8}.navlinks a:hover{color:var(--gold2)}.menu{display:none;background:none;border:1px solid var(--line);color:var(--gold2);padding:8px 11px;border-radius:5px}
+.hero{min-height:590px;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(9,9,13,.3),#09090d 97%),radial-gradient(ellipse at 50% 25%,rgba(104,77,132,.36),transparent 48%),linear-gradient(135deg,#17131e,#09090d 65%)}.hero:before{content:"✦";position:absolute;top:14%;left:13%;font-size:26px;color:#c5a56a;opacity:.6}.hero:after{content:"✧";position:absolute;right:15%;top:28%;font-size:34px;color:#c5a56a;opacity:.5}.hero-inner{max-width:760px;padding:70px 0}.eyebrow{color:var(--gold);font-size:10px;letter-spacing:4px;text-transform:uppercase}.hero h1{font-family:Cinzel,serif;font-size:clamp(48px,12vw,92px);letter-spacing:9px;line-height:1.12;margin:16px 0;color:#f2e5c9;text-shadow:0 0 35px rgba(197,165,106,.16)}.hero p{max-width:570px;margin:0 auto 28px;color:#c0b9c3;font-size:14px}.btn{display:inline-block;border:1px solid var(--gold);padding:12px 22px;color:var(--gold2);font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:.2s}.btn:hover{background:var(--gold);color:#09090d}.btn.secondary{border-color:#5c5067;color:#d4c6df;margin-left:8px}
+section{padding:78px 0}.section-head{text-align:center;margin:0 auto 35px;max-width:650px}.kicker{color:var(--gold);font-size:10px;letter-spacing:3px;text-transform:uppercase}.section-head h2{font:600 clamp(26px,6vw,38px) Cinzel,serif;margin:9px 0 10px;color:#f0e4ce}.section-head p{font-size:13px;color:var(--muted);margin:0}.intro{background:linear-gradient(180deg,#0d0c12,#111017)}.lorebox{max-width:780px;margin:auto;border:1px solid var(--line);background:linear-gradient(135deg,rgba(197,165,106,.06),rgba(118,96,142,.06));padding:28px;text-align:center}.lorebox p{color:#c7c0c7;font-size:14px}.lorebox strong{color:var(--gold2);font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{background:var(--panel);border:1px solid var(--line);padding:22px;min-height:160px;position:relative;overflow:hidden}.card:before{content:"";position:absolute;width:100px;height:100px;border:1px solid rgba(197,165,106,.09);transform:rotate(45deg);right:-55px;top:-55px}.symbol{font:28px Cinzel,serif;color:var(--gold);margin-bottom:10px}.card h3{font:600 17px Cinzel,serif;color:#eadcc4;margin:0 0 7px}.card p{font-size:12px;color:var(--muted);margin:0}.kingdoms .card{min-height:205px}.tag{display:inline-block;margin-top:15px;color:var(--gold);font-size:9px;letter-spacing:2px;text-transform:uppercase}
+.races{background:#0e0d13}.weapons{background:linear-gradient(180deg,#0e0d13,#09090d)}.feature-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.feature{border-left:2px solid var(--gold);padding:12px 16px;background:#121118}.feature b{font:500 14px Cinzel,serif;color:#e6d7bd}.feature p{margin:4px 0 0;color:var(--muted);font-size:12px}
+.notice{border:1px dashed rgba(197,165,106,.35);padding:16px;color:#bdb4bf;font-size:12px;text-align:center;margin-top:20px}
+.links{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}.links a{border:1px solid var(--line);padding:12px 18px;color:var(--gold2);font-size:12px}
+footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:#77717b;font-size:10px;letter-spacing:1px}footer strong{font:600 15px Cinzel,serif;color:var(--gold)}
+@media(max-width:700px){.navlinks{display:none;position:absolute;top:66px;left:0;right:0;background:#0e0d13;padding:16px 5%;border-bottom:1px solid var(--line);flex-direction:column;gap:13px}.navlinks.open{display:flex}.menu{display:block}.hero{min-height:540px}.hero-inner{padding:55px 0}.hero h1{letter-spacing:5px}.grid{grid-template-columns:repeat(2,1fr);gap:10px}.card{padding:17px;min-height:155px}.kingdoms .card{min-height:190px}.feature-list{grid-template-columns:1fr}section{padding:60px 0}.lorebox{padding:20px}.btn.secondary{margin:10px 0 0}}
+@media(max-width:390px){.grid{grid-template-columns:1fr}.card{min-height:auto}.hero h1{font-size:45px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="brand" href="#home">STARFALL</a><button class="menu" id="menuBtn" aria-label="Buka menu">☰</button><nav class="navlinks" id="navLinks"><a href="#lore">WORLD LORE</a><a href="#races">RAS</a><a href="#kingdoms">KERAJAAN</a><a href="#weapons">SENJATA</a><a href="#features">FITUR</a><a href="#links">TAUTAN</a></nav></div></header>
+<main>
+<section class="hero" id="home"><div class="wrap hero-inner"><div class="eyebrow">DUNIA ROLEPLAY FANTASI</div><h1>STARFALL</h1><p>Sebuah dunia yang dibentuk oleh harapan kuno. Sebuah bintang jatuh dari langit, membawa kekuatan yang mampu mengubah nasib dunia.</p><a class="btn" href="#lore">Jelajahi Dunia</a><a class="btn secondary" href="#features">Lihat Fitur</a></div></section>
+<section class="intro" id="lore"><div class="wrap"><div class="section-head"><div class="kicker">AWAL MULA</div><h2>Lore Dunia</h2><p>Semuanya bermula ketika sebuah bintang jatuh dari langit.</p></div><div class="lorebox"><p>Dahulu, sebuah bintang misterius jatuh ke dunia. Dari peristiwa itu muncul sebuah benda yang dikenal sebagai <strong>Starwish</strong> — relik luar biasa yang konon dapat mengabulkan keinginan siapa pun yang menemukan atau menyentuhnya.</p><p>Namun, Starwish tidak membawa kedamaian. Kekuatannya membangkitkan hasrat untuk menguasai, sementara senjata-senjata terkutuk dari zaman kuno mulai bermunculan kembali. Kini, kerajaan dan berbagai individu memburu kekuatan untuk menentukan masa depan dunia.</p></div></div></section>
+<section class="races" id="races"><div class="wrap"><div class="section-head"><div class="kicker">PENGHUNI DUNIA</div><h2>Ras yang Dapat Dimainkan</h2><p>Asal-usul berbeda. Kekuatan berbeda. Satu dunia yang sama.</p></div><div class="grid">
+<div class="card"><div class="symbol">Ⅰ</div><h3>Human</h3><p>Mudah beradaptasi dan pantang menyerah. Kekuatan terbesar mereka adalah potensi diri.</p></div>
+<div class="card"><div class="symbol">Ⅱ</div><h3>Elf</h3><p>Bangsa yang memiliki hubungan erat dengan hutan kuno dan sejarah panjang.</p></div>
+<div class="card"><div class="symbol">Ⅲ</div><h3>Dwarf</h3><p>Dikenal karena ketahanan, keterampilan, dan budaya yang kuat.</p></div>
+<div class="card"><div class="symbol">Ⅳ</div><h3>Orc</h3><p>Bangsa kuat yang kekuatannya disegani di berbagai wilayah.</p></div>
+<div class="card"><div class="symbol">Ⅴ</div><h3>Demon</h3><p>Ras misterius dengan sifat yang tidak biasa dan ditakuti.</p></div>
+</div><div class="notice">Kemampuan ras dan penjelasan lengkap akan ditambahkan di sini.</div></div></section>
+<section class="kingdoms" id="kingdoms"><div class="wrap"><div class="section-head"><div class="kicker">KEKUATAN DARATAN</div><h2>Kingdoms</h2><p>Perbedaan cita-cita membentuk konflik dan masa depan Starfall.</p></div><div class="grid">
+<div class="card"><div class="symbol">✧</div><h3>Eldoria</h3><p>Kerajaan yang menjunjung ketertiban, kesucian, dan visinya tentang dunia yang benar.</p><span class="tag">Order · Purity</span></div>
+<div class="card"><div class="symbol">⚔</div><h3>Vordka</h3><p>Kerajaan yang mengutamakan kekuatan, penaklukan, dan hak untuk berkuasa.</p><span class="tag">Strength · Conquest</span></div>
+<div class="card"><div class="symbol">?</div><h3>Unknown Kingdom</h3><p>Identitas dan prinsip kerajaan ketiga masih dirahasiakan.</p><span class="tag">AKAN DIUNGKAP</span></div>
+</div></div></section>
+<section class="weapons" id="weapons"><div class="wrap"><div class="section-head"><div class="kicker">RELIK DARI ZAMAN YANG TERLUPAKAN</div><h2>Cursed Weapons</h2><p>Senjata kuno yang berkaitan dengan misteri dan kekuatan Starwish.</p></div><div class="lorebox"><div class="symbol">⚔</div><h3 style="font-family:Cinzel,serif;color:#eadcc4">Setiap kekuatan memiliki harga.</h3><p>Senjata-senjata ini bukan sekadar alat untuk bertarung. Masing-masing memiliki kemampuan, evolusi, dan rahasia tersendiri. Wujud sejati mereka tidak mudah dibangkitkan.</p></div><div class="notice">Daftar senjata, kemampuan, dan syarat evolusi: segera hadir.</div></div></section>
+<section id="features"><div class="wrap"><div class="section-head"><div class="kicker">JELAJAHI DAN BERTAHAN</div><h2>World Features</h2><p>Kenali berbagai sistem yang membentuk kehidupan di dunia Starfall.</p></div><div class="feature-list">
+<div class="feature"><b>Eksplorasi Dungeon</b><p>Jelajahi tempat berbahaya dan hadapi makhluk-makhluk buas.</p></div>
+<div class="feature"><b>Mana</b><p>Sumber daya yang berkaitan dengan sistem khusus di dunia ini.</p></div>
+<div class="feature"><b>Monster Shards</b><p>Kumpulkan material berharga dari monster.</p></div>
+<div class="feature"><b>Merchant Town</b><p>Perdagangkan material yang dikumpulkan dan temukan berbagai barang berguna.</p></div>
+<div class="feature"><b>Player Roleplay</b><p>Bangun kisah karaktermu melalui pilihan dan interaksi.</p></div>
+<div class="feature"><b>Kingdom Politics</b><p>Bentuk aliansi, persaingan, dan masa depan kerajaan.</p></div>
+</div></div></section>
+<section id="links" class="intro"><div class="wrap"><div class="section-head"><div class="kicker">TETAP TERHUBUNG</div><h2>Important Links</h2><p>Bergabunglah dengan komunitas dan ikuti perkembangan Starfall.</p></div><div class="links"><a href="#" aria-label="Discord link placeholder">Discord — tambahkan tautan</a><a href="#" aria-label="TikTok link placeholder">TikTok — tambahkan tautan</a><a href="#" aria-label="Server information placeholder">Info Server — tambahkan tautan</a></div><div class="notice">Ganti tautan contoh ini dengan tautan resmi komunitas sebelum website diterbitkan.</div></div></section>
+</main>
+<footer><div class="wrap"><strong>STARFALL</strong><p> DUNIA YANG LAHIR DARI JATUHNYA SEBUAH BINTANG</p><span>© 2026 STARFALL ROLEPLAY. ALL RIGHTS RESERVED.</span></div></footer>
+<script>
+const btn=document.getElementById('menuBtn'),nav=document.getElementById('navLinks');
+btn.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+</script>
+</body></html>
